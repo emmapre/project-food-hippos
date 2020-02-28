@@ -1,4 +1,4 @@
-const apiKey = "3f250e6671872e4d7d4aa89b826d875d";
+const apiKey = "968faa2d78423024c5488f425274dbb4";
 const cityId = 82; //Lisbon
 const cuisineId = 83; //Seafood
 const url = `https://developers.zomato.com/api/v2.1/search?entity_id=${cityId}&entity_type=city&cuisines=${cuisineId}`;
@@ -53,10 +53,10 @@ const tableBooking = booking => {
 
 //Fetches data from API
 fetch(url, {
-  headers: {
-    "user-key": apiKey
-  }
-})
+    headers: {
+      "user-key": apiKey
+    }
+  })
   .then(response => {
     return response.json();
   })
@@ -99,8 +99,8 @@ fetch(url, {
       } else if (priceMedium.checked) {
         filteredList = json.restaurants.filter(
           item =>
-            item.restaurant.average_cost_for_two > 35 &&
-            item.restaurant.average_cost_for_two < 60
+          item.restaurant.average_cost_for_two > 35 &&
+          item.restaurant.average_cost_for_two < 60
         );
       } else if (priceHigh.checked) {
         filteredList = json.restaurants.filter(
@@ -114,8 +114,8 @@ fetch(url, {
     const sortByRating = () => {
       filteredList.sort(
         (a, b) =>
-          b.restaurant.user_rating.aggregate_rating -
-          a.restaurant.user_rating.aggregate_rating
+        b.restaurant.user_rating.aggregate_rating -
+        a.restaurant.user_rating.aggregate_rating
       );
       showRestaurants();
     };
